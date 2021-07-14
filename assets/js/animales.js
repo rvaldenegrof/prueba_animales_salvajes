@@ -1,4 +1,6 @@
-export class Animal {
+"use strict";
+//import {Animal} from './animales.js';
+class Animal {
     #nombre;
     #edad;
     #img;
@@ -12,24 +14,26 @@ export class Animal {
         this.#sonido = sonido;
     }
 
-    getNombre(){
+    get Nombre(){
         return this.#nombre;
     }
 
-    getEdad(){
+    get Edad(){
         return this.#edad;
     }
 
-    getImg(){
+    get Img(){
         return this.#img;
     }
 
-    setComentario(nuevoComentario){
-        this.#comentarios = nuevoComentario;
-    }
-
-    getSonido(){
+    get Sonido(){
         return this.#sonido;
     }
-}
 
+    set Comentarios(nuevoComentario){
+        this.#comentarios = nuevoComentario;
+    }
+    get Comentarios(){
+        return this.#comentarios;
+    }
+}
