@@ -1,107 +1,10 @@
 "use strict";
-//import {Animal} from './animales.js';
-class Animal {
-    #nombre;
-    #edad;
-    #img;
-    #comentarios;
-    #sonido;
-    constructor(nombre, edad, img, comentarios, sonido){
-        this.#nombre = nombre;
-        this.#edad = edad;
-        this.#img = img;
-        this.#comentarios = comentarios;
-        this.#sonido = sonido;
-    }
-
-    get Nombre(){
-        return this.#nombre;
-    }
-
-    get Edad(){
-        return this.#edad;
-    }
-
-    get Img(){
-        return this.#img;
-    }
-
-    get Sonido(){
-        return this.#sonido;
-    }
-
-    set Comentarios(nuevoComentario){
-        this.#comentarios = nuevoComentario;
-    }
-    get Comentarios(){
-        return this.#comentarios;
-    }
-}
-
-class Leon extends Animal{
-    constructor(...args){
-        super(...args);
-    }
-
-    Rugir(player){
-        console.log("RUUUUUGIR");
-        player.src = `/assets/sounds/${this.Sonido}`;
-        player.load();
-        player.play();
-    }
-}
-
-class Lobo extends Animal{
-    constructor(...args){
-        super(...args);
-    }
-
-    Aullar(){
-        console.log("AUUUU AU AU");
-        player.src = `/assets/sounds/${this.Sonido}`;
-        player.load();
-        player.play();
-    }
-}
-
-class Oso extends Animal{
-    constructor(...args){
-        super(...args);
-    }
-
-    Grunir(){
-        console.log("RAWWWW RAWWW");
-        player.src = `/assets/sounds/${this.Sonido}`;
-        player.load();
-        player.play();
-    }
-}
-
-class Serpiente extends Animal{
-    constructor(...args){
-        super(...args);
-    }
-
-    Sisear(){
-        console.log("PSIIII PS PS");
-        player.src = `/assets/sounds/${this.Sonido}`;
-        player.load();
-        player.play();
-    }
-}
-
-class Aguila extends Animal {
-    constructor(...args){
-        super(...args);
-    }
-
-    Chillar(){
-        console.log("IGGG IGG");
-        player.src = `/assets/sounds/${this.Sonido}`;
-        player.load();
-        player.play();
-    }
-}
+import {Animal} from './animales.js';
+import {Leon} from './leon.js'
+import {Lobo} from './lobo.js';
+import {Oso} from './oso.js';
+import {Serpiente} from './serpiente.js';
+import {Aguila} from './aguila.js';
 
 (async function(){
 
@@ -149,7 +52,7 @@ class Aguila extends Animal {
 
             divFoto.addEventListener("click", () => {
                 $("#modal").modal("show");
-                console.log(animal);
+                //console.log(animal);
                 const modalBody = document.getElementById("modal-body");
                 modalBody.innerHTML = `
                   <img src="./assets/imgs/${animal.Img}" style="width: 500px" class="img-fluid"/>

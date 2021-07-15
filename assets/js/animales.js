@@ -1,6 +1,6 @@
 "use strict";
 //import {Animal} from './animales.js';
-class Animal {
+export class Animal {
     #nombre;
     #edad;
     #img;
