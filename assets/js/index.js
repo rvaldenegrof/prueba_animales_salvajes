@@ -96,8 +96,21 @@ class Aguila extends Animal {
     const previewElement = document.getElementById("preview");
     const btnRegistrarElement = document.getElementById("btnRegistrar");
 
-    const Request = await fetch("/animales.json");
-    const { animales: Animales } = await Request.json();
+    let Animales = [];
+    //let Animales;
+    try {
+        const Request = await fetch("/animales.json");
+        const ParsedRequest= await Request.json();
+
+        Animales = ParsedRequest.animales;
+        //console.log(Animales);
+    } catch (e) { 
+        console.error(e);
+        Animales = [];
+    }
+
+
+
 
     animalElement.addEventListener('change', () => {
         const animalElejido = animalElement.value;
